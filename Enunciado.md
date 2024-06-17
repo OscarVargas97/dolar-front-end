@@ -3,7 +3,7 @@ Se requiere desarrollar una app web donde se grafique la fluctuación del
 valor del dólar según un rango de fechas.
 Requerimientos y consideraciones:
 
--[] Consumir el valor del dólar desde el endpoint del backend anterior.
+-[x] Consumir el valor del dólar desde el endpoint del backend anterior.
 
 -[] Guardar los valores del dólar obtenidos en el estado del
 componente utilizando Context o Redux.
