@@ -8,6 +8,8 @@ import Grid from '@mui/material/Unstable_Grid2'
 import DolarLine from './components/dollarline/DolarLine'
 import DolarTable from './components/dollartable/DollarTable'
 import Box from '@mui/material/Box'
+import { Card, CardContent } from '@mui/material'
+import DollarFilter from './components/dollarFilter/DollarFilter'
 
 export default function App () {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -34,7 +36,12 @@ export default function App () {
               <DolarLine />
             </Grid>
             <Grid xs={4} sx={{ height: '100%' }}>
-              <DolarTable />
+              <Card style={{ height: '93%', width: '100%' }}>
+                <CardContent style={{ height: '100%', width: '100%' }}>
+                  <DollarFilter />
+                  <DolarTable />
+                </CardContent>
+              </Card>
             </Grid>
           </Grid>
         </Box>
