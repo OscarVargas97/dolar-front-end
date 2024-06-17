@@ -1,4 +1,3 @@
-import { data } from '../../../mocks/dollars.json'
 export const columns = [
   {
     width: 200,
@@ -28,7 +27,7 @@ export function loadMoreRows (currentRows) {
   for (let i = 0; i < 10; i++) {
     const index = currentRows.length + i
     if (index >= sample.length) break // Stop when reaching the end of sample data
-    const randomSelection = data[Math.floor(Math.random() * sample.length)]
+    const randomSelection = sample[Math.floor(Math.random() * sample.length)]
     newRows.push(createData(index, ...randomSelection))
   }
   return newRows
