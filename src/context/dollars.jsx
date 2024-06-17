@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react'
-import { fetchUsers } from '../services/getDollars'
+import { fetchDollars } from '../services/getDollars'
 
 export const DollarsContext = createContext()
 
@@ -14,7 +14,7 @@ const finishDay = () => {
 
 export function DollarsProvider ({ children }) {
   const [dollars, setDollars] = useState({
-    dollarsData: fetchUsers({ startDate: initialDay(), finishDate: finishDay() })
+    dollarsData: fetchDollars({ startDate: initialDay(), finishDate: finishDay() })
   })
 
   return (
