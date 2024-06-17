@@ -12,7 +12,6 @@ export default function DollarTable () {
   const [data, setData] = useState(dollars.dollarsData)
   useEffect(() => {
     setData(dollars.dollarsData)
-    console.log(dollars.dollarsData)
   }, [dollars])
   return (
 
