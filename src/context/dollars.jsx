@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import { fetchDollars } from '../services/getDollars'
 
 export const DollarsContext = createContext()
@@ -13,14 +13,22 @@ const finishDay = () => {
 }
 
 const getData = async () => {
-  const data = fetchDollars({ startDate: initialDay(), finishDate: finishDay() }).then(res => res.data)
-  return data
+  const data = await fetchDollars({ startDate: initialDay(), finishDate: finishDay() })
+  return data.data
 }
 
 export function DollarsProvider ({ children }) {
   const [dollars, setDollars] = useState({
-    dollarsData: getData()
+    dollarsData: []
   })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getData()
+      setDollars({ dollarsData: data })
+    }
+    fetchData()
+  }, [])
 
   return (
     <DollarsContext.Provider value={{
