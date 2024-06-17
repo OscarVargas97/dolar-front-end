@@ -6,8 +6,6 @@ import RowContent from './RowContent'
 import fixedHeaderContent from './FixedHeaderContent'
 import { TableVirtuoso } from 'react-virtuoso'
 import { VirtuosoTableComponents } from './CustomVirtuosoTable'
-import { Card, CardContent } from '@mui/material'
-import DateRangePicker from './DateRangePicker'
 
 export default function DollarTable () {
   const [rows, setRows] = useState(() => Array.from({ length: 10 }, (_, index) => {
@@ -24,20 +22,15 @@ export default function DollarTable () {
 
   return (
 
-    <Card style={{ height: '93%', width: '100%' }}>
-      <CardContent style={{ height: '100%', width: '100%' }}>
+    <Paper style={{ height: '100%', width: '100%' }}>
 
-        <Paper style={{ height: '100%', width: '100%' }}>
-          <DateRangePicker />
-          <TableVirtuoso
-            data={rows}
-            components={VirtuosoTableComponents}
-            fixedHeaderContent={fixedHeaderContent}
-            itemContent={RowContent}
-            endReached={loadMore}
-          />
-        </Paper>
-      </CardContent>
-    </Card>
+      <TableVirtuoso
+        data={rows}
+        components={VirtuosoTableComponents}
+        fixedHeaderContent={fixedHeaderContent}
+        itemContent={RowContent}
+        endReached={loadMore}
+      />
+    </Paper>
   )
 }
