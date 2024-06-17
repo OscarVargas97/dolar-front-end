@@ -16,7 +16,6 @@ export default function DollarTable () {
   return (
 
     <Paper style={{ height: '100%', width: '100%' }}>
-
       <TableVirtuoso
         data={data}
         components={VirtuosoTableComponents}
