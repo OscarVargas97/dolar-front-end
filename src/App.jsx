@@ -1,56 +1,29 @@
-import * as React from 'react'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import { useState } from 'react'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import CssBaseline from '@mui/material/CssBaseline'
+import React from 'react'
+import { Box, Card, CardContent } from '@mui/material'
 import Navbar from './components/navbar/Navbar'
-import Grid from '@mui/material/Unstable_Grid2'
-import DolarLine from './components/dollarline/DolarLine'
-import DolarTable from './components/dollartable/DollarTable'
-import Box from '@mui/material/Box'
-import { Card, CardContent } from '@mui/material'
-import DollarFilter from './components/dollarFilter/DollarFilter'
-import { DollarsProvider } from './context/dollars'
-import { EditModalProvider } from './context/editmodal'
+import MainContent from './components/MainContent.jsx'
+import ProvidersCapsule from './components/ProvidersCapsule'
+import DollarLine from './components/dollarline/DollarLine'
+import DollarTable from './components/dollartable/DollarTable.jsx'
+import DollarFilter from './components/dollarFilter/DollarFilter.jsx'
+
 export default function App () {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-  const [mode] = useState(prefersDarkMode ? 'dark' : 'light')
-
-  const appTheme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode
-        }
-      }),
-    [mode]
-  )
-
   return (
-    <ThemeProvider theme={appTheme}>
-      <DollarsProvider>
-        <EditModalProvider>
-          <CssBaseline enableColorScheme />
-          <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            <Navbar />
-            <Box sx={{ flex: 3, display: 'flex' }}>
-              <Grid container sx={{ flex: 1 }}>
-                <Grid xs={8} sx={{ height: '100%' }}>
-                  <DolarLine />
-                </Grid>
-                <Grid xs={4} sx={{ height: '100%' }}>
-                  <Card style={{ height: '93%', width: '100%' }}>
-                    <CardContent style={{ height: '100%', width: '100%' }}>
-                      <DollarFilter />
-                      <DolarTable />
-                    </CardContent>
-                  </Card>
-                </Grid>
-              </Grid>
-            </Box>
-          </Box>
-        </EditModalProvider>
-      </DollarsProvider>
-    </ThemeProvider>
+    <ProvidersCapsule>
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Navbar />
+        <MainContent
+          leftContent={<DollarLine />}
+          rightContent={
+            <Card style={{ height: '93%', width: '100%' }}>
+              <CardContent style={{ height: '100%', width: '100%' }}>
+                <DollarFilter />
+                <DollarTable />
+              </CardContent>
+            </Card>
+}
+        />
+      </Box>
+    </ProvidersCapsule>
   )
 }

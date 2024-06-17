@@ -1,31 +1,25 @@
-import * as React from 'react'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
-import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
+import React from 'react'
+import { AppBar, Toolbar, IconButton, Typography } from '@mui/material'
 
-export default function Navbar () {
+import Brightness4Icon from '@mui/icons-material/Brightness4'
+import Brightness7Icon from '@mui/icons-material/Brightness7'
+import useThemeContext from '../../hook/useThemeContext'
+
+const Navbar = () => {
+  const { mode, toggleTheme } = useThemeContext()
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static'>
-        <Toolbar>
-          <IconButton
-            size='large'
-            edge='start'
-            color='inherit'
-            aria-label='menu'
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <AppBar position='static'>
+      <Toolbar>
+        <Typography variant='h6' style={{ flexGrow: 1 }}>
+          Valor del dólar
+        </Typography>
+        <IconButton edge='end' color='inherit' onClick={toggleTheme}>
+          {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+        </IconButton>
+      </Toolbar>
+    </AppBar>
   )
 }
+
+export default Navbar

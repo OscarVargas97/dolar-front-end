@@ -6,7 +6,7 @@ import { DollarsContext } from '../../context/dollars'
 import { useContext, useEffect, useState } from 'react'
 import dayjs from 'dayjs'
 
-export default function BasicLineChart () {
+export default function DollarLine () {
   const { dollars } = useContext(DollarsContext)
   const [chartData, setChartData] = useState({ xAxisData: [], seriesData: [] })
 
@@ -37,8 +37,8 @@ export default function BasicLineChart () {
           }]}
           series={[
             {
-              dataKey: 'value',
-              label: 'Valor del dólar'
+              dataKey: 'value'
+
             }
           ]}
           dataset={chartData}
