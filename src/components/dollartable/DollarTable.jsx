@@ -6,6 +6,7 @@ import fixedHeaderContent from './FixedHeaderContent'
 import { TableVirtuoso } from 'react-virtuoso'
 import { VirtuosoTableComponents } from './CustomVirtuosoTable'
 import { DollarsContext } from '../../context/dollars'
+import EditRowModal from './EditRowModal'
 
 export default function DollarTable () {
   const { dollars } = useContext(DollarsContext)
@@ -14,7 +15,6 @@ export default function DollarTable () {
     setData(dollars.dollarsData)
   }, [dollars])
   return (
-
     <Paper style={{ height: '100%', width: '100%' }}>
       <TableVirtuoso
         data={data}
@@ -22,6 +22,7 @@ export default function DollarTable () {
         fixedHeaderContent={fixedHeaderContent}
         itemContent={RowContent}
       />
+      <EditRowModal />
     </Paper>
   )
 }

@@ -16,12 +16,10 @@ un filtro de fechas.
 valores del dólar utilizados para el rango de fechas seleccionado.
 (Columnas: Fecha | Valor)
 
--[] Con la tabla anterior se debe poder seleccionar una fila para
-modificar el valor del dólar de una fecha específica o eliminar el
-registro completo del estado de la aplicación. (La forma para
-modificar o eliminar estos valores queda a decisión del
-Desarrollador. Nos interesa saber cómo te desenvuelves en este
-aspecto.)
+-[x] Con la tabla anterior se debe poder seleccionar una fila para
+modificar el valor del dólar de una fecha específica
+
+-[X] eliminar el registro completo del estado de la aplicación.
 
 -[x] Siempre que se hagan cambios en el estado de la aplicación
 (valores del dólar) se debe actualizar el gráfico y la tabla.
