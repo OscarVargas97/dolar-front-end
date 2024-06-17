@@ -12,9 +12,14 @@ const finishDay = () => {
   return new Date().toISOString().split('T')[0]
 }
 
+const getData = async () => {
+  const data = fetchDollars({ startDate: initialDay(), finishDate: finishDay() }).then(res => res.data)
+  return data
+}
+
 export function DollarsProvider ({ children }) {
   const [dollars, setDollars] = useState({
-    dollarsData: fetchDollars({ startDate: initialDay(), finishDate: finishDay() })
+    dollarsData: getData()
   })
 
   return (
