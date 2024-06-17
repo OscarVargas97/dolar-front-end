@@ -5,14 +5,14 @@ Requerimientos y consideraciones:
 
 -[x] Consumir el valor del dólar desde el endpoint del backend anterior.
 
--[] Guardar los valores del dólar obtenidos en el estado del
+-[x] Guardar los valores del dólar obtenidos en el estado del
 componente utilizando Context o Redux.
 
--[] En primera instancia se debe mostrar la fluctuación del dólar de
+-[x] En primera instancia se debe mostrar la fluctuación del dólar de
 los últimos 30 días, pudiendo modificar este periodo a través de
 un filtro de fechas.
 
--[] En conjunto con el gráfico se debe mostrar una tabla con todos los
+-[x] En conjunto con el gráfico se debe mostrar una tabla con todos los
 valores del dólar utilizados para el rango de fechas seleccionado.
 (Columnas: Fecha | Valor)
 
@@ -23,5 +23,5 @@ modificar o eliminar estos valores queda a decisión del
 Desarrollador. Nos interesa saber cómo te desenvuelves en este
 aspecto.)
 
--[] Siempre que se hagan cambios en el estado de la aplicación
+-[x] Siempre que se hagan cambios en el estado de la aplicación
 (valores del dólar) se debe actualizar el gráfico y la tabla.
