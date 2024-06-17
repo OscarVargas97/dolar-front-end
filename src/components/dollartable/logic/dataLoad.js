@@ -1,9 +1,11 @@
 export const columns = [
   {
-    width: 200,
-    label: 'Fecha',
-    dataKey: 'date'
+    width: 120,
+    label: 'Moneda Cambio',
+    dataKey: 'name',
+    numeric: true
   },
+
   {
     width: 120,
     label: 'Valor',
@@ -11,11 +13,15 @@ export const columns = [
     numeric: true
   },
   {
-    width: 120,
-    label: 'Moneda Cambio',
-    dataKey: 'type',
-    numeric: true
+    width: 100,
+    label: 'Fecha',
+    dataKey: 'date'
+  },
+  {
+    width: 100,
+    label: ''
   }
+
 ]
 
 export function createData (id, date, value, name) {

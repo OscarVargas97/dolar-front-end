@@ -28,7 +28,7 @@ export default function App () {
   return (
     <ThemeProvider theme={appTheme}>
       <DollarsProvider>
-        <CssBaseline />
+        <CssBaseline enableColorScheme />
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Navbar />
           <Box sx={{ flex: 3, display: 'flex' }}>
